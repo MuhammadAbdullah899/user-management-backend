@@ -1,0 +1,12 @@
+# Read the documentation: https://github.com/FriendsOfSymfony/FOSOAuthServerBundle/blob/master/Resources/doc/index.md#step-5-configure-fosoauthserverbundle
+fos_oauth_server:
+    db_driver: orm
+    service:
+        user_provider: security.provider.user_custom_provider
+        options:
+            access_token_lifetime: "%env(ACCESS_TOKEN_EXPIRY)%"
+
+    client_class: App\Entity\Client
+    access_token_class: App\Entity\AccessToken
+    refresh_token_class: App\Entity\RefreshToken
+    auth_code_class: App\Entity\AuthCode
